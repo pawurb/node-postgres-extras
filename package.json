@@ -30,8 +30,7 @@
   "license": "MIT",
   "dependencies": {
     "ascii-table": "0.0.9",
-    "pg": "~8.x.x",
-    "pkg-dir": "^4.2.0"
+    "pg": "~8.x.x"
   },
   "devDependencies": {
     "chai": "^4.2.0",

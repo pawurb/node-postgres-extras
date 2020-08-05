@@ -1,9 +1,9 @@
 var expect = require("chai").expect;
-var PGExtras = require("./../lib/pg_extras").PGExtras
+var PostgresExtras = require("../lib/postgres-extras").PostgresExtras
 
 describe('test', function() {
   it('works', function(){
-    console.log(PGExtras)
-    expect(PGExtras.locks()).to.eq(true);
+    console.log(PostgresExtras)
+    expect(PostgresExtras.locks()).to.eq(true);
   });
 });
