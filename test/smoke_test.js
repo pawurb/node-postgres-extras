@@ -3,6 +3,7 @@ var PGExtras = require("./../lib/pg_extras").PGExtras
 
 describe('test', function() {
   it('works', function(){
-    expect(PGExtras.dupa).to.eq(true);
+    console.log(PGExtras)
+    expect(PGExtras.locks()).to.eq(true);
   });
 });

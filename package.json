@@ -2,10 +2,7 @@
   "name": "postgres-extras",
   "version": "0.0.1",
   "description": "PostgreSQL database performance insights. Locks, index usage, buffer cache hit ratios, vacuum stats and more.",
-  "main": "./lib/translator.js",
-  "bin": {
-    "normit": "./bin/normit"
-  },
+  "main": "./lib/pg_extras.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha test"
   },
@@ -20,7 +17,7 @@
     "performance"
   ],
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=8.0.0"
   },
   "files": [
     "lib"
@@ -33,7 +30,8 @@
   "license": "MIT",
   "dependencies": {
     "ascii-table": "0.0.9",
-    "pg": "~8.x.x"
+    "pg": "~8.x.x",
+    "pkg-dir": "^4.2.0"
   },
   "devDependencies": {
     "chai": "^4.2.0",
