@@ -6,6 +6,8 @@ Queries can be used to obtain information about a Postgres instance, that may be
 
 Are you riding on Rails? Check out the [Rails version](https://github.com/pawurb/rails-pg-extras).
 
+You can check out this blog post for detailed step by step tutorial on how to [optimize PostgreSQL using PG Extras package](https://pawelurbanek.com/postgresql-fix-performance).
+
 ## Installation
 
 ```bash
