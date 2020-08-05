@@ -31,7 +31,10 @@
     "url": "github.com/pawurb"
   },
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "ascii-table": "0.0.9",
+    "pg": "~8.x.x"
+  },
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^8.1.1"
