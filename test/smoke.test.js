@@ -5,7 +5,7 @@ const database_url = process.env.DATABASE_URL || "postgresql://postgres:secretpa
 test('query in raw format', (done) => {
   PostgresExtras.query('cache_hit', {
       database_url,
-      format: 'raw'
+      silent: true
     }
   ).then((result) => {
     expect(result.rows[0].name).toBe('index hit rate')

@@ -28,7 +28,7 @@ export DATABASE_URL = "postgresql://postgres:secret@localhost:5432/database_name
 
 Alternatively you can set provide it when calling the methods:
 
-```
+```node
 PostgresExtras.cache_hit(database_url: "postgresql://postgres:secret@localhost:5432/database_name")
 
 ```
@@ -51,10 +51,10 @@ PostgresExtras.cache_hit()
 +----------------+------------------------+
 ```
 
-By default the ASCII table is displayed. To disable it you can add `format: 'raw'` config option and get the raw query results:
+By default the ASCII table is displayed. To disable it you can add `silent: true` config option and get the raw query results:
 
 ```node
-PostgresExtras.cache_hit(format: 'raw').than((res) => {
+PostgresExtras.cache_hit(silent: true).than((res) => {
   console.log(res)
 })
 
@@ -85,14 +85,6 @@ PostgresExtras.cache_hit(format: 'raw').than((res) => {
   ]
 }
 
-
-PostgresExtras.cache_hit(in_format: :array) =>()
-
- [["index hit rate", "0.97796610169491525424"], ["table hit rate", "0.96724294813466787989"]]
-
-PostgresExtras.cache_hit(in_format: :raw) =>()
-
- #<PG::Result:0x00007f75777f7328 status=PGRES_TUPLES_OK ntuples=2 nfields=2 cmd_tuples=2>
 ```
 
 ## Available methods
