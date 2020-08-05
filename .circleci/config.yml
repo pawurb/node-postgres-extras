@@ -8,8 +8,8 @@ jobs:
       - image: circleci/postgres:12.2
         environment:
           POSTGRES_USER: postgres
-          POSTGRES_DB: ruby-pg-extras-test
-          POSTGRES_PASSWORD: secret
+          POSTGRES_DB: node-postgres-extras
+          POSTGRES_PASSWORD: secretpass097321
     parallelism: 1
     steps:
       - checkout
