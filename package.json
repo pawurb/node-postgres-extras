@@ -1,8 +1,8 @@
 {
   "name": "postgres-extras",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "PostgreSQL database performance insights. Locks, index usage, buffer cache hit ratios, vacuum stats and more.",
-  "main": "./lib/pg_extras.js",
+  "main": "./lib/postgres-extras.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha test"
   },
