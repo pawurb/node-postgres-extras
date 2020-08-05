@@ -1,0 +1,26 @@
+version: 2
+jobs:
+  test:
+    docker:
+      - image: circleci/node:10.9
+        environment:
+          DATABASE_URL: postgresql://postgres:secretpass097321@localhost:5432/node-postgres-extras
+      - image: circleci/postgres:12.2
+        environment:
+          POSTGRES_USER: postgres
+          POSTGRES_DB: ruby-pg-extras-test
+          POSTGRES_PASSWORD: secret
+    parallelism: 1
+    steps:
+      - checkout
+      - run: npm install
+      - run: dockerize -wait tcp://localhost:5432 -timeout 1m
+      - run:
+          name: Run tests
+          command: |
+            jest
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test

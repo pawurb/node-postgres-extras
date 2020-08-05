@@ -4,7 +4,7 @@
   "description": "PostgreSQL database performance insights. Locks, index usage, buffer cache hit ratios, vacuum stats and more.",
   "main": "./lib/postgres-extras.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha test"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -34,6 +34,7 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "jest": "^26.2.2",
     "mocha": "^8.1.1"
   }
 }
