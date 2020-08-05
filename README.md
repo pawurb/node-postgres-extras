@@ -36,6 +36,8 @@ PostgresExtras.cache_hit(database_url: "postgresql://postgres:secret@localhost:5
 You can run queries using a simple NodeJS API:
 
 ```node
+const PostgresExtras = require("postgres-extras").PostgresExtras
+
 PostgresExtras.cache_hit()
 ```
 ```bash
