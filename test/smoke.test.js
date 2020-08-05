@@ -14,7 +14,7 @@ test('query in raw format', (done) => {
 });
 
 test('query in ascii format', (done) => {
-  PostgresExtras.query('cache_hit', {
+  PostgresExtras.cache_hit({
       database_url,
     }
   ).then(() => {
