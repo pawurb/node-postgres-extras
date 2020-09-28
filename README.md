@@ -6,8 +6,6 @@ Queries can be used to obtain information about a Postgres instance, that may be
 
 Are you riding on Rails? Check out the [Rails version](https://github.com/pawurb/rails-pg-extras).
 
-You can check out this blog post for detailed step by step tutorial on how to [optimize PostgreSQL using PG Extras package](https://pawelurbanek.com/postgresql-fix-performance).
-
 ## Installation
 
 ```bash
@@ -18,6 +16,19 @@ or
 
 ```bash
 yarn add postgres-extras
+```
+
+Some of the queries (e.g., `calls` and `outliers`) require [pg_stat_statements](https://www.postgresql.org/docs/current/pgstatstatements.html) extension enabled.
+
+You can check if it is enabled in your database by running:
+
+```node
+PostgresExtras.extensions()
+```
+You should see the similar line in the output:
+
+```bash
+| pg_stat_statements  | 1.7  | 1.7 | track execution statistics of all SQL statements executed |
 ```
 
 ## Usage
@@ -452,6 +463,16 @@ PostgresExtras.kill_all()
 ```
 
 This commands kills all the currently active connections to the database. It can be useful as a last resort when your database is stuck in a deadlock.
+
+### `extensions`
+
+```node
+
+PostgresExtras.extensions()
+
+```
+
+This command lists all the currently installed and available PostgreSQL extensions.
 
 ### `mandelbrot`
 
