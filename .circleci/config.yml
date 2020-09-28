@@ -2,7 +2,7 @@ version: 2
 jobs:
   test:
     docker:
-      - image: circleci/node:10.9
+      - image: circleci/node:12.8
         environment:
           DATABASE_URL: postgresql://postgres:secretpass097321@localhost:5432/node-postgres-extras
       - image: circleci/postgres:12.2
@@ -19,7 +19,7 @@ jobs:
       - run:
           name: Run tests
           command: |
-            jest
+            ./node_modules/jest/bin/jest.js
 workflows:
   version: 2
   test:

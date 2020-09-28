@@ -1,4 +1,4 @@
-# Node Postgres Extras <span class="badge-npmversion"><a href="https://npmjs.org/package/postgres-extras" title="View this project on NPM"><img src="https://img.shields.io/npm/v/postgres-extras.svg" alt="NPM version" /></a></span>
+# Node Postgres Extras <span class="badge-npmversion"><a href="https://npmjs.org/package/postgres-extras" title="View this project on NPM"><img src="https://img.shields.io/npm/v/postgres-extras.svg" alt="NPM version" /></a></span> [![CircleCI](https://circleci.com/gh/pawurb/node-postgres-extras.svg?style=svg)](https://circleci.com/gh/pawurb/node-postgres-extras)
 
 NodeJS port of [Heroku PG Extras](https://github.com/heroku/heroku-pg-extras) with several additions and improvements. The goal of this project is to provide powerful insights into the PostgreSQL database for NodeJS apps that are not using the Heroku PostgreSQL plugin.
 
