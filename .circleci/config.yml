@@ -10,6 +10,7 @@ jobs:
           POSTGRES_USER: postgres
           POSTGRES_DB: node-postgres-extras
           POSTGRES_PASSWORD: secretpass097321
+          NODE_ENV: development
     parallelism: 1
     steps:
       - checkout
