@@ -111,11 +111,27 @@ PostgresExtras.cache_hit(silent: true).than((res) => {
 ```
 
 ### SSL
-To enable SSL/TLS options you can pass in your configuration like so:
+
+To enable SSL/TLS options you can pass in your configuration:
+
 ```node
+
+// Heroku addon database example
+const tls = require('tls')
+const options = {
+  ssl: {
+    rejectUnauthorized: false,
+  }
+}
+
+PostgresExtras.extensions(options).than((res) => {
+  console.log(res)
+})
+
 // RDS Example
 const tls = require('tls')
 const ca = require('fs').readFileSync(`${__dirname}/rds-ca-2019-root.pem`)
+
 const options = {
   ssl: {
     rejectUnauthorized: false,
@@ -132,6 +148,7 @@ const options = {
 PostgresExtras.extensions(options).than((res) => {
   console.log(res)
 })
+
 ```
 See [`pg`](https://node-postgres.com/features/ssl) documentation for further details.
 
