@@ -52,7 +52,7 @@ export DATABASE_URL = "postgresql://postgres:secret@localhost:5432/database_name
 Alternatively you can set provide it when calling the methods:
 
 ```node
-PostgresExtras.cache_hit(database_url: "postgresql://postgres:secret@localhost:5432/database_name")
+PostgresExtras.cache_hit({database_url: "postgresql://postgres:secret@localhost:5432/database_name"})
 
 ```
 
@@ -109,6 +109,31 @@ PostgresExtras.cache_hit(silent: true).than((res) => {
 }
 
 ```
+
+### SSL
+To enable SSL/TLS options you can pass in your configuration like so:
+```node
+// RDS Example
+const tls = require('tls')
+const ca = require('fs').readFileSync(`${__dirname}/rds-ca-2019-root.pem`)
+const options = {
+  ssl: {
+    rejectUnauthorized: false,
+    ca,
+    checkServerIdentity: (host, cert) => {
+      const error = tls.checkServerIdentity(host, cert)
+      if (error && !cert.subject.CN.endsWith('.rds.amazonaws.com')) {
+        return error
+      }
+    }
+  }
+}
+
+PostgresExtras.extensions(options).than((res) => {
+  console.log(res)
+})
+```
+See [`pg`](https://node-postgres.com/features/ssl) documentation for further details.
 
 ## Available methods
 
