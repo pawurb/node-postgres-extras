@@ -52,7 +52,7 @@ export DATABASE_URL = "postgresql://postgres:secret@localhost:5432/database_name
 Alternatively you can set provide it when calling the methods:
 
 ```node
-PostgresExtras.cache_hit({database_url: "postgresql://postgres:secret@localhost:5432/database_name"})
+PostgresExtras.cache_hit({ database_url: "postgresql://postgres:secret@localhost:5432/database_name" })
 
 ```
 
@@ -77,7 +77,7 @@ PostgresExtras.cache_hit()
 By default the ASCII table is displayed. To disable it you can add `silent: true` config option and get the raw query results:
 
 ```node
-PostgresExtras.cache_hit(silent: true).than((res) => {
+PostgresExtras.cache_hit({ silent: true }).than((res) => {
   console.log(res)
 })
 
