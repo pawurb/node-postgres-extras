@@ -413,6 +413,23 @@ PostgresExtras.unused_indexes()
 
 This command displays indexes that have < 50 scans recorded against them, and are greater than 5 pages in size, ordered by size relative to the number of index scans. This command is generally useful for eliminating indexes that are unused, which can impact write performance, as well as read performance should they occupy space in memory.
 
+### `null_indexes`
+
+```node
+
+PostgresExtras.null_indexes()
+
+
+   oid   |         index      | index_size | unique | indexed_column | null_frac | expected_saving
+---------+--------------------+------------+--------+----------------+-----------+-----------------
+  183764 | users_reset_token  | 1445 MB    | t      | reset_token    |   97.00%  | 1401 MB
+   88732 | plan_cancelled_at  | 539 MB     | f      | cancelled_at   |    8.30%  | 44 MB
+ 9827345 | users_email        | 18 MB      | t      | email          |   28.67%  | 5160 kB
+
+```
+
+This command displays indexes that contain `NULL` values. A high ratio of `NULL` values means that using a partial index excluding them will be beneficial in case they are not used for searching.
+
 ### `seq_scans`
 
 ```node
