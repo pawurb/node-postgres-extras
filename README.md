@@ -79,7 +79,7 @@ PostgresExtras.cache_hit()
 By default the ASCII table is displayed. To disable it you can add `silent: true` config option and get the raw query results:
 
 ```node
-PostgresExtras.cache_hit({ silent: true }).than((res) => {
+PostgresExtras.cache_hit({ silent: true }).then((res) => {
   console.log(res)
 })
 
@@ -126,7 +126,7 @@ const options = {
   }
 }
 
-PostgresExtras.extensions(options).than((res) => {
+PostgresExtras.extensions(options).then((res) => {
   console.log(res)
 })
 
@@ -147,7 +147,7 @@ const options = {
   }
 }
 
-PostgresExtras.extensions(options).than((res) => {
+PostgresExtras.extensions(options).then((res) => {
   console.log(res)
 })
 
