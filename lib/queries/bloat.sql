@@ -45,7 +45,7 @@ FROM
 (SELECT
   'table' as type,
   schemaname,
-  tablename as object_name,
+  tablename::text as object_name,
   ROUND(CASE WHEN otta=0 THEN 0.0 ELSE table_bloat.relpages/otta::numeric END,1) AS bloat,
   CASE WHEN relpages < otta THEN '0' ELSE (bs*(table_bloat.relpages-otta)::bigint)::bigint END AS raw_waste
 FROM
@@ -60,4 +60,3 @@ SELECT
 FROM
   index_bloat) bloat_summary
 ORDER BY raw_waste DESC, bloat DESC;
-
